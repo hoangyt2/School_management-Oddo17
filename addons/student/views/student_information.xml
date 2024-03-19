@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
-        <menuitem id="student_information_menu"
-                  name="Student Information"
+        <menuitem id="student.student_information_menu"
                   parent="school_management.school_menu_root"
+                  name="Student Information"
+                  sequence="30"/>
+        <menuitem id="student_submenu_information_menu"
+                  name="Student Information"
+                  parent="student.student_information_menu"
                   action="action_student_information"
                   sequence="10"/>
 
@@ -30,6 +33,18 @@
                             <field name="class_id"/>
                             <field name="name"/>
                             <field name="birthday"/>
+                        </group>
+                        <group>
+                            <field name="subject_list" string="Các môn học đăng ký">
+                                <tree>
+                                    <field name="name"></field>
+                                    <field name="author"></field>
+                                </tree>
+                                <!--                                <form>-->
+                                <!--                                    <field name="name" string="Tên môn học"></field>-->
+                                <!--                                    <field name="author" string="Tác giả"></field>-->
+                                <!--                                </form>-->
+                            </field>
                         </group>
                     </sheet>
                 </form>
