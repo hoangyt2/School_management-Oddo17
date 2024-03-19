@@ -17,6 +17,7 @@
                     <field name="name" optional="show"/>
                     <field name="mainTeacher" optional="show"/>
                     <field name="grade" optional="show"/>
+                    <field name="address" optional="show"/>
                 </tree>
             </field>
         </record>
@@ -32,6 +33,7 @@
                             <field name="name"/>
                             <field name="mainTeacher"/>
                             <field name="grade"/>
+                            <field name="address" optional="show"/>
                         </group>
                         <group>
                             <field name="student_list">

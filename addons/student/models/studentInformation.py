@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from contextlib import nullcontext
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class StudentInformation(models.Model):
@@ -13,6 +14,11 @@ class StudentInformation(models.Model):
 
     subject_list = fields.Many2many("subject.information", 'relation_subject_student','student_id', 'subject_id', string="Bảng quan hệ giữa môn học và học sinh")
 
+    def write(self, values):
+        # function write get all values of model
+        rtn = super(StudentInformation, self).write(values)
+        if not self.subject_list:
+            raise UserError("Bạn cần chọn môn học")
 
 class ClassInformation(models.Model):
     _inherit = 'class.information'

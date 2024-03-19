@@ -35,11 +35,13 @@
                             <field name="birthday"/>
                         </group>
                         <group>
-                            <field name="subject_list" string="Các môn học đăng ký">
-                                <tree>
-                                    <field name="name"></field>
-                                    <field name="author"></field>
-                                </tree>
+                            <field name="subject_list" widget="many2many_tags" string="Các môn học đăng ký"
+                                   help="Đây là danh sách các môn học của học sinh">
+
+                                <!--                                <tree>-->
+                                <!--                                    <field name="name"></field>-->
+                                <!--                                    <field name="author"></field>-->
+                                <!--                                </tree>-->
                                 <!--                                <form>-->
                                 <!--                                    <field name="name" string="Tên môn học"></field>-->
                                 <!--                                    <field name="author" string="Tác giả"></field>-->
